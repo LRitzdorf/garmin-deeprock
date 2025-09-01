@@ -14,7 +14,8 @@ Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09
 - [ ] Selectable class icons
 - [ ] Bluetooth, alarm, and notification icons (if they end up fitting on-screen)
 - [ ] Custom time and date format support (if I can figure out `strftime`-like string formatting)
-- [ ] On-device settings UI (if I can figure out how that works for watch faces)
+- [ ] Localization
+- [ ] Broad device support
 
 ## Bugs
 
