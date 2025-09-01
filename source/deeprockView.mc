@@ -3,6 +3,7 @@ import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
 import Toybox.WatchUi;
+using Toybox.Time.Gregorian;
 
 class deeprockView extends WatchUi.WatchFace {
 
@@ -23,10 +24,12 @@ class deeprockView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
-        // Get the current time and format it correctly
+        // Get the current date/time
+        var now = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+        var hours = now.hour;
+
+        // Format time
         var timeFormat = "$1$:$2$";
-        var clockTime = System.getClockTime();
-        var hours = clockTime.hour;
         if (!System.getDeviceSettings().is24Hour) {
             if (hours > 12) {
                 hours = hours - 12;
@@ -34,15 +37,25 @@ class deeprockView extends WatchUi.WatchFace {
         } else {
             if (Application.Properties.getValue("UseMilitaryFormat")) {
                 timeFormat = "$1$$2$";
-                hours = hours.format("%02d");
             }
         }
-        var timeString = Lang.format(timeFormat, [hours, clockTime.min.format("%02d")]);
+        if (Application.Properties.getValue("HoxxesTimeSuffix") as Boolean) {
+            timeFormat += " HXT";
+        }
+        var timeString = Lang.format(
+            timeFormat,
+            [hours.format("%02d"), now.min.format("%02d")]
+        );
+
+        // Format date
+        var dateString = Lang.format(
+            "$1$ $2$ $3$ $4$",
+            [now.day_of_week.toUpper(), now.day, now.month.toUpper(), now.year]
+        );
 
         // Update the view
-        var view = View.findDrawableById("TimeLabel") as Text;
-        view.setColor(Application.Properties.getValue("ForegroundColor") as Number);
-        view.setText(timeString);
+        (View.findDrawableById("TimeLabel") as Text).setText(timeString);
+        (View.findDrawableById("DateLabel") as Text).setText(dateString);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);

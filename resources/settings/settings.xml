@@ -18,8 +18,14 @@
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
-        <settingConfig type="boolean" />
-    </setting>
+    <group id="TimeGroup" title="@Strings.TimeGroupTitle">
+        <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+            <settingConfig type="boolean" />
+        </setting>
+
+        <setting propertyKey="@Properties.HoxxesTimeSuffix" title="@Strings.HoxxesTimeTitle">
+            <settingConfig type="boolean" />
+        </setting>
+    </group>
 
 </settings>
