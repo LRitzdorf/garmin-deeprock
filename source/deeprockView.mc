@@ -24,6 +24,28 @@ class deeprockView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
+        // Format character status area
+        var className;
+        switch (Application.Properties.getValue("DwarfClass")) {
+            default:
+            case 0:
+                className = "DRILLER";
+                break;
+            case 1:
+                className = "ENGINEER";
+                break;
+            case 2:
+                className = "GUNNER";
+                break;
+            case 3:
+                className = "SCOUT";
+                break;
+        }
+        var classString = Lang.format(
+            "$1$, icon: $2$",
+            [className, Application.Properties.getValue("UseClassIcon")]
+        );
+
         // Get the current date/time
         var now = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
         var hours = now.hour;
@@ -54,6 +76,7 @@ class deeprockView extends WatchUi.WatchFace {
         );
 
         // Update the view
+        (View.findDrawableById("ClassLabel") as Text).setText(classString);
         (View.findDrawableById("TimeLabel") as Text).setText(timeString);
         (View.findDrawableById("DateLabel") as Text).setText(dateString);
 
