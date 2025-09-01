@@ -8,7 +8,7 @@ Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09
 
 ## Features
 
-- [ ] Time and date, obviously
+- [X] Time and date, obviously
 - [ ] Battery and step-goal meters (shields and health, respectively)
 - [ ] Free-form class name field
 - [ ] Selectable class icons
