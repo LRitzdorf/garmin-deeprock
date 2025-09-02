@@ -75,10 +75,21 @@ class deeprockView extends WatchUi.WatchFace {
             [now.day_of_week.toUpper(), now.day, now.month.toUpper(), now.year]
         );
 
+        // Get status and activity data
+        var battery = System.getSystemStats().battery;
+        var activity = ActivityMonitor.getInfo();
+        var steps = activity.steps == null ? 0 : activity.steps;
+        var calories = activity.calories == null ? 0 : activity.calories;
+        var stepProgress = activity.stepGoal == null ? 0.0 : (steps.toFloat() / activity.stepGoal);
+
         // Update the view
+        (View.findDrawableById("BatteryLabel") as Text).setText(battery.format("%d"));
+        (View.findDrawableById("StepGoalLabel") as Text).setText((stepProgress*10).format("%.1f"));
         (View.findDrawableById("ClassLabel") as Text).setText(classString);
         (View.findDrawableById("TimeLabel") as Text).setText(timeString);
         (View.findDrawableById("DateLabel") as Text).setText(dateString);
+        (View.findDrawableById("StepsLabel") as Text).setText(steps.toString());
+        (View.findDrawableById("CaloriesLabel") as Text).setText(calories.toString());
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
