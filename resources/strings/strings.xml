@@ -5,6 +5,8 @@
     <string id="DwarfGroupTitle">Dwarf Settings</string>
     <string id="DwarfClassTitle">Class</string>
     <string id="UseClassIconTitle">Use Simplified Class Icon</string>
+    <string id="CustomDwarfNameTitle">Custom Dwarf Name</string>
+    <string id="CustomDwarfNamePrompt">Leave empty to use class name</string>
 
     <string id="TimeGroupTitle">Time Settings</string>
     <string id="MilitaryFormatTitle">Military Format for 24 Hour Time</string>

@@ -14,6 +14,7 @@ class deeprockView extends WatchUi.WatchFace {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
+        onSettingsChanged();
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -24,28 +25,6 @@ class deeprockView extends WatchUi.WatchFace {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
-        // Format character status area
-        var className;
-        switch (Application.Properties.getValue("DwarfClass")) {
-            default:
-            case 0:
-                className = "DRILLER";
-                break;
-            case 1:
-                className = "ENGINEER";
-                break;
-            case 2:
-                className = "GUNNER";
-                break;
-            case 3:
-                className = "SCOUT";
-                break;
-        }
-        var classString = Lang.format(
-            "$1$, icon: $2$",
-            [className, Application.Properties.getValue("UseClassIcon")]
-        );
-
         // Get the current date/time
         var now = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
         var hours = now.hour;
@@ -85,7 +64,6 @@ class deeprockView extends WatchUi.WatchFace {
         // Update the view
         (View.findDrawableById("BatteryLabel") as Text).setText(battery.format("%d"));
         (View.findDrawableById("StepGoalLabel") as Text).setText((stepProgress*10).format("%.1f"));
-        (View.findDrawableById("ClassLabel") as Text).setText(classString);
         (View.findDrawableById("TimeLabel") as Text).setText(timeString);
         (View.findDrawableById("DateLabel") as Text).setText(dateString);
         (View.findDrawableById("StepsLabel") as Text).setText(steps.toString());
@@ -93,6 +71,12 @@ class deeprockView extends WatchUi.WatchFace {
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+    }
+
+    function onSettingsChanged() as Void {
+        var image_and_name = loadClassData();
+        (View.findDrawableById("ClassImage") as Bitmap).setBitmap(image_and_name[0]);
+        (View.findDrawableById("ClassLabel") as Text).setText(image_and_name[1].toUpper());
     }
 
     // Called when this View is removed from the screen. Save the
@@ -107,6 +91,60 @@ class deeprockView extends WatchUi.WatchFace {
 
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
+    }
+
+    // Load a class image and string into memory.
+    function loadClassData() as [WatchUi.BitmapResource or Graphics.BitmapReference, String] {
+        var image, name;
+        var useIcon = Application.Properties.getValue("UseClassIcon") as Boolean;
+
+        // Identify class and select appropriate image resource
+        switch (Application.Properties.getValue("DwarfClass") as Integer) {
+            default:
+            case 0: // DRILLER
+                name = Rez.Strings.DwarfClassDriller;
+                if (useIcon) {
+                    image = Rez.Drawables.Driller_icon;
+                } else {
+                    image = Rez.Drawables.Driller_portrait;
+                }
+                break;
+            case 1: // ENGINEER
+                name = Rez.Strings.DwarfClassEngineer;
+                if (useIcon) {
+                    image = Rez.Drawables.Engineer_icon;
+                } else {
+                    image = Rez.Drawables.Engineer_portrait;
+                }
+                break;
+            case 2: // GUNNER
+                name = Rez.Strings.DwarfClassGunner;
+                if (useIcon) {
+                    image = Rez.Drawables.Gunner_icon;
+                } else {
+                    image = Rez.Drawables.Gunner_portrait;
+                }
+                break;
+            case 3: // SCOUT
+                name = Rez.Strings.DwarfClassScout;
+                if (useIcon) {
+                    image = Rez.Drawables.Scout_icon;
+                } else {
+                    image = Rez.Drawables.Scout_portrait;
+                }
+                break;
+        }
+        image = WatchUi.loadResource(image);
+
+        // Handle custom name, if any
+        var customName = Application.Properties.getValue("CustomDwarfName") as String;
+        if (customName.length() > 0) {
+            name = customName;
+        } else {
+            name = WatchUi.loadResource(name);
+        }
+
+        return [image, name];
     }
 
 }

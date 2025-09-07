@@ -10,8 +10,8 @@ Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09
 
 - [X] Time and date, obviously
 - [ ] Battery and step-goal meters (shields and health, respectively)
-- [~] Free-form class name field
-- [~] Selectable class icons
+- [X] Free-form class name field
+- [X] Selectable class icons
 - [ ] Bluetooth, alarm, and notification icons (if they end up fitting on-screen)
 - [ ] Broader device support
 

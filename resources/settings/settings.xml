@@ -13,6 +13,10 @@
         <setting propertyKey="@Properties.UseClassIcon" title="@Strings.UseClassIconTitle">
             <settingConfig type="boolean" />
         </setting>
+
+        <setting propertyKey="@Properties.CustomDwarfName" title="@Strings.CustomDwarfNameTitle" prompt="@Strings.CustomDwarfNamePrompt">
+            <settingConfig type="alphaNumeric" />
+        </setting>
     </group>
 
     <group id="TimeGroup" title="@Strings.TimeGroupTitle">

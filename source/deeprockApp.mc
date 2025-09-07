@@ -4,6 +4,8 @@ import Toybox.WatchUi;
 
 class deeprockApp extends Application.AppBase {
 
+    private var view;
+
     function initialize() {
         AppBase.initialize();
     }
@@ -18,11 +20,13 @@ class deeprockApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new deeprockView() ];
+        view = new deeprockView();
+        return [ view ];
     }
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() as Void {
+        view.onSettingsChanged();
         WatchUi.requestUpdate();
     }
 
