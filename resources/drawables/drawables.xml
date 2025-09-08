@@ -10,4 +10,7 @@
     <bitmap id="Engineer_icon" filename="Engineer_icon.png" scaleY="20%" />
     <bitmap id="Gunner_icon" filename="Gunner_icon.png" scaleY="20%" />
     <bitmap id="Scout_icon" filename="Scout_icon.png" scaleY="20%" />
+
+    <bitmap id="ShieldIcon" filename="shield.png" scaleY="5%" />
+    <bitmap id="HealthIcon" filename="health.png" scaleY="5%" />
 </drawables>

@@ -7,7 +7,7 @@ import Toybox.WatchUi;
 class DwarfBox extends WatchUi.Drawable {
     private var bgColor as Number, screenWidth as Number;
     private var icon as WatchUi.Bitmap, label as WatchUi.Text;
-    private var shieldBar as WatchUi.Drawable, healthBar as WatchUi.Drawable;
+    private var shieldBar as IconGauge, healthBar as IconGauge;
 
     typedef DwarfBoxParams as {
         :locX as Number,
@@ -41,18 +41,22 @@ class DwarfBox extends WatchUi.Drawable {
             :justification=>Graphics.TEXT_JUSTIFY_LEFT,
         });
 
-        shieldBar = new WatchUi.Text({
-            :text=>"SHIELD TODO",
+        shieldBar = new IconGauge({
             :locX=>rightIconMargin,
             :locY=>locY + yStep,
-            :font=>Graphics.FONT_XTINY,
+            :width=>width,
+            :color=>Properties.getValue("ShieldColor") as Number,
+            :bg=>Properties.getValue("ShieldBgColor") as Number,
+            :rezId=>Rez.Drawables.ShieldIcon,
         });
 
         healthBar = new IconGauge({
-            :text=>"HEALTH TODO",
             :locX=>rightIconMargin,
             :locY=>locY + 2*yStep,
-            :font=>Graphics.FONT_XTINY,
+            :width=>width,
+            :color=>Properties.getValue("HealthColor") as Number,
+            :bg=>Properties.getValue("HealthBgColor") as Number,
+            :rezId=>Rez.Drawables.HealthIcon,
         });
     }
 
@@ -64,10 +68,10 @@ class DwarfBox extends WatchUi.Drawable {
     }
 
     function setShield(value as Float) {
-        // TODO:
+        shieldBar.setProgress(value);
     }
     function setHealth(value as Float) {
-        // TODO:
+        healthBar.setProgress(value);
     }
 
     function draw(dc) {
