@@ -1,10 +1,14 @@
 <layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
     <bitmap id="Background" filename="../drawables/bg.png" scaleX="100%" scaleY="100%" />
 
-    <bitmap id="ClassImage" x="20%" y="5%" filename="../drawables/Driller_portrait.png" />
-    <label id="ClassLabel" x="40%" y="5%" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" />
-    <label id="BatteryLabel" x="45%" y="12%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="StepGoalLabel" x="75%" y="12%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <drawable id="DwarfBox" class="DwarfBox">
+        <param name="locX">40</param>
+        <param name="locY">20</param>
+        <param name="width">110</param>
+        <param name="rezId">@Rez.Drawables.Scout_portrait</param>
+        <param name="color">Graphics.COLOR_YELLOW</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+    </drawable>
 
     <label id="TimeLabel" x="center" y="35%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
     <label id="DateLabel" x="center" y="55%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />

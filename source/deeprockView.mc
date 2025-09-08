@@ -7,6 +7,8 @@ using Toybox.Time.Gregorian;
 
 class deeprockView extends WatchUi.WatchFace {
 
+    private var dwarfBox as DwarfBox?;
+
     function initialize() {
         WatchFace.initialize();
     }
@@ -14,6 +16,7 @@ class deeprockView extends WatchUi.WatchFace {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
+        dwarfBox = View.findDrawableById("DwarfBox") as DwarfBox;
         onSettingsChanged();
     }
 
@@ -62,8 +65,8 @@ class deeprockView extends WatchUi.WatchFace {
         var stepProgress = activity.stepGoal == null ? 0.0 : (steps.toFloat() / activity.stepGoal);
 
         // Update the view
-        (View.findDrawableById("BatteryLabel") as Text).setText(battery.format("%d"));
-        (View.findDrawableById("StepGoalLabel") as Text).setText((stepProgress*10).format("%.1f"));
+        dwarfBox.setShield(battery/100);
+        dwarfBox.setHealth(stepProgress);
         (View.findDrawableById("TimeLabel") as Text).setText(timeString);
         (View.findDrawableById("DateLabel") as Text).setText(dateString);
         (View.findDrawableById("StepsLabel") as Text).setText(steps.toString());
@@ -75,8 +78,8 @@ class deeprockView extends WatchUi.WatchFace {
 
     function onSettingsChanged() as Void {
         var image_and_name = loadClassData();
-        (View.findDrawableById("ClassImage") as Bitmap).setBitmap(image_and_name[0]);
-        (View.findDrawableById("ClassLabel") as Text).setText(image_and_name[1].toUpper());
+        dwarfBox.setImage(image_and_name[0]);
+        dwarfBox.setLabel(image_and_name[1].toUpper());
     }
 
     // Called when this View is removed from the screen. Save the
