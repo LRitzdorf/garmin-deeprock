@@ -11,22 +11,24 @@
     </drawable>
 
     <drawable id="TimeLabel" class="TabbedLabel">
-        <param name="locX">60</param>
-        <param name="locY">80</param>
+        <param name="locX">25</param>
+        <param name="locY">95</param>
         <param name="label">"MISSION TIME"</param>
         <param name="tabColor">Graphics.COLOR_BLACK</param>
         <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
         <param name="color">Graphics.COLOR_WHITE</param>
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_LARGE</param>
     </drawable>
     <drawable id="DateLabel" class="TabbedLabel">
-        <param name="locX">60</param>
-        <param name="locY">130</param>
+        <param name="locX">25</param>
+        <param name="locY">155</param>
         <param name="label">"MISSION DATE"</param>
         <param name="tabColor">Graphics.COLOR_BLACK</param>
         <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
         <param name="color">Graphics.COLOR_WHITE</param>
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_SMALL</param>
     </drawable>
 
     <label id="StepsLabel" x="25%" y="80%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
