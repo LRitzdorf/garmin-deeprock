@@ -13,4 +13,7 @@
 
     <bitmap id="ShieldIcon" filename="shield.png" scaleY="5%" />
     <bitmap id="HealthIcon" filename="health.png" scaleY="5%" />
+
+    <bitmap id="StepsIcon" filename="steps.png" scaleY="8%" />
+    <bitmap id="CaloriesIcon" filename="calories.png" scaleY="8%" />
 </drawables>

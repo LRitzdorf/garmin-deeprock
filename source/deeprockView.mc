@@ -9,6 +9,7 @@ class deeprockView extends WatchUi.WatchFace {
 
     private var dwarfBox as DwarfBox?;
     private var timeLabel as TabbedLabel?, dateLabel as TabbedLabel?;
+    private var statsBox as StatsBox?;
 
     function initialize() {
         WatchFace.initialize();
@@ -20,6 +21,7 @@ class deeprockView extends WatchUi.WatchFace {
         dwarfBox = View.findDrawableById("DwarfBox") as DwarfBox;
         timeLabel = View.findDrawableById("TimeLabel") as TabbedLabel;
         dateLabel = View.findDrawableById("DateLabel") as TabbedLabel;
+        statsBox = View.findDrawableById("StatsBox") as StatsBox;
         onSettingsChanged();
     }
 
@@ -72,8 +74,8 @@ class deeprockView extends WatchUi.WatchFace {
         dwarfBox.setHealth(stepProgress);
         timeLabel.setText(timeString);
         dateLabel.setText(dateString);
-        (View.findDrawableById("StepsLabel") as Text).setText(steps.toString());
-        (View.findDrawableById("CaloriesLabel") as Text).setText(calories.toString());
+        statsBox.setSteps(steps);
+        statsBox.setCalories(calories);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
