@@ -32,10 +32,12 @@
     </drawable>
 
     <drawable id="StatsBox" class="StatsBox">
-        <param name="locX">20</param>
-        <param name="locY">170</param>
-        <param name="height">30</param>
+        <param name="locY">195</param>
+        <param name="width">160</param>
         <param name="stepsRezId">@Rez.Drawables.StepsIcon</param>
         <param name="caloriesRezId">@Rez.Drawables.CaloriesIcon</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_XTINY</param>
     </drawable>
 </layout>
