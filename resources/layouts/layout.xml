@@ -10,8 +10,24 @@
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
     </drawable>
 
-    <label id="TimeLabel" x="center" y="35%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
-    <label id="DateLabel" x="center" y="55%" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <drawable id="TimeLabel" class="TabbedLabel">
+        <param name="locX">60</param>
+        <param name="locY">80</param>
+        <param name="label">"MISSION TIME"</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+    </drawable>
+    <drawable id="DateLabel" class="TabbedLabel">
+        <param name="locX">60</param>
+        <param name="locY">130</param>
+        <param name="label">"MISSION DATE"</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+    </drawable>
 
     <label id="StepsLabel" x="25%" y="80%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
     <label id="CaloriesLabel" x="75%" y="80%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />

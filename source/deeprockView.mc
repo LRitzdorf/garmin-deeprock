@@ -8,6 +8,7 @@ using Toybox.Time.Gregorian;
 class deeprockView extends WatchUi.WatchFace {
 
     private var dwarfBox as DwarfBox?;
+    private var timeLabel as TabbedLabel?, dateLabel as TabbedLabel?;
 
     function initialize() {
         WatchFace.initialize();
@@ -17,6 +18,8 @@ class deeprockView extends WatchUi.WatchFace {
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
         dwarfBox = View.findDrawableById("DwarfBox") as DwarfBox;
+        timeLabel = View.findDrawableById("TimeLabel") as TabbedLabel;
+        dateLabel = View.findDrawableById("DateLabel") as TabbedLabel;
         onSettingsChanged();
     }
 
@@ -67,8 +70,8 @@ class deeprockView extends WatchUi.WatchFace {
         // Update the view
         dwarfBox.setShield(battery/100);
         dwarfBox.setHealth(stepProgress);
-        (View.findDrawableById("TimeLabel") as Text).setText(timeString);
-        (View.findDrawableById("DateLabel") as Text).setText(dateString);
+        timeLabel.setText(timeString);
+        dateLabel.setText(dateString);
         (View.findDrawableById("StepsLabel") as Text).setText(steps.toString());
         (View.findDrawableById("CaloriesLabel") as Text).setText(calories.toString());
 
