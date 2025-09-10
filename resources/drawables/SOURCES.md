@@ -2,6 +2,7 @@ The following graphical assets are reused under the Apache license from C-D-Lewi
 
 - bg.png
 - calories.png
+- drg_logo.png
 - Driller_icon.png
 - Driller_portrait.png
 - Engineer_icon.png

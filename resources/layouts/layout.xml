@@ -10,6 +10,8 @@
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
     </drawable>
 
+    <bitmap id="DeepRockLogo" x="170" y="80" filename="../drawables/drg_logo.png" scaleX="20%" />
+
     <drawable id="TimeLabel" class="TabbedLabel">
         <param name="locX">25</param>
         <param name="locY">95</param>
