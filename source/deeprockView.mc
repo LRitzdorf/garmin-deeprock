@@ -48,9 +48,7 @@ class deeprockView extends WatchUi.WatchFace {
                 timeFormat = "$1$$2$";
             }
         }
-        if (Application.Properties.getValue("HoxxesTimeSuffix") as Boolean) {
-            timeFormat += " HXT";
-        }
+        timeFormat += " HXT";
         var timeString = Lang.format(
             timeFormat,
             [hours.format("%02d"), now.min.format("%02d")]

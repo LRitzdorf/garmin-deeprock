@@ -4,7 +4,6 @@
     <property id="UseClassIcon" type="boolean">false</property>
     <property id="CustomDwarfName" type="string"></property>
     <property id="UseMilitaryFormat" type="boolean">false</property>
-    <property id="HoxxesTimeSuffix" type="boolean">true</property>
 
     <property id="ShieldColor" type="number">0x00AAFF</property>
     <property id="ShieldBgColor" type="number">0x002280</property>
