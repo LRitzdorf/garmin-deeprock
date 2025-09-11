@@ -2,7 +2,7 @@
     <bitmap id="Background" filename="../../resources/drawables/bg.png" scaleX="100%" scaleY="100%" />
 
     <drawable id="DwarfBox" class="DwarfBox">
-        <param name="locX">40</param>
+        <param name="locX">30</param>
         <param name="locY">20</param>
         <param name="width">110</param>
         <param name="rezId">@Rez.Drawables.Scout_portrait</param>
@@ -10,11 +10,11 @@
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
     </drawable>
 
-    <bitmap id="DeepRockLogo" x="170" y="80" filename="../../resources/drawables/drg_logo.png" scaleX="20%" />
+    <bitmap id="DeepRockLogo" x="160" y="75" filename="../../resources/drawables/drg_logo.png" scaleX="20%" />
 
     <drawable id="TimeLabel" class="TabbedLabel">
-        <param name="locX">25</param>
-        <param name="locY">95</param>
+        <param name="locX">20</param>
+        <param name="locY">90</param>
         <param name="label">"MISSION TIME"</param>
         <param name="labelYOffset">8</param>
         <param name="tabThinStrip">3</param>
@@ -25,8 +25,8 @@
         <param name="font">Graphics.FONT_LARGE</param>
     </drawable>
     <drawable id="DateLabel" class="TabbedLabel">
-        <param name="locX">25</param>
-        <param name="locY">155</param>
+        <param name="locX">20</param>
+        <param name="locY">145</param>
         <param name="label">"MISSION DATE"</param>
         <param name="labelYOffset">8</param>
         <param name="tabThinStrip">3</param>
@@ -38,8 +38,8 @@
     </drawable>
 
     <drawable id="StatsBox" class="StatsBox">
-        <param name="locY">195</param>
-        <param name="width">160</param>
+        <param name="locY">180</param>
+        <param name="width">140</param>
         <param name="stepsRezId">@Rez.Drawables.StepsIcon</param>
         <param name="caloriesRezId">@Rez.Drawables.CaloriesIcon</param>
         <param name="color">Graphics.COLOR_WHITE</param>
