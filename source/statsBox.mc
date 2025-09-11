@@ -64,7 +64,7 @@ class StatsBox extends WatchUi.Drawable {
 
     function draw(dc) {
         dc.setColor(bgColor, Graphics.COLOR_TRANSPARENT);
-        dc.fillRectangle(0, locY - 3, screenWidth, stepsLabel.height + 6);
+        dc.fillRectangle(0, locY - 3, screenWidth, stepsIcon.height + 6);
         stepsIcon.draw(dc);
         caloriesIcon.draw(dc);
         stepsLabel.draw(dc);

@@ -9,6 +9,7 @@ class TabbedLabel extends WatchUi.Text {
 
     private var tabBgColor as Number;
     private var tabLabel as WatchUi.Text;
+    private var tabText as String, tabFont as Graphics.FontType;
 
     typedef TabbedLabelParams as {
         :locX as Number,
@@ -42,6 +43,8 @@ class TabbedLabel extends WatchUi.Text {
             :locY=>locY - 20,
             :font=>Graphics.FONT_XTINY,
         });
+        tabText = params[:label];
+        tabFont = Graphics.FONT_XTINY;
     }
 
     function setText(text) {
@@ -50,6 +53,7 @@ class TabbedLabel extends WatchUi.Text {
     }
     function setLabel(text as String or ResourceId) {
         tabLabel.setText(text);
+        tabText = text;
     }
 
     function draw(dc) {
@@ -58,8 +62,9 @@ class TabbedLabel extends WatchUi.Text {
 
         // Calculate tab bar vertex positions
         width = dc.getTextWidthInPixels(mText, mFont);  // Does this not happen automatically during draw?
-        var tabUpperEdge = locY - tabLabel.height + 4;
-        var tabRightEdge = tabLabel.locX + tabLabel.width;
+        var tabDims = dc.getTextDimensions(tabText, tabFont);
+        var tabUpperEdge = locY - tabDims[1] + 4;
+        var tabRightEdge = tabLabel.locX + tabDims[0];
         var upperEdge = tabUpperEdge + TAB_SLICE_SIZE;
         var rightEdge = locX + width - 1;  // Not sure why, but the right edge is always off by one pixel
 
