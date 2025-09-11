@@ -80,7 +80,7 @@ class deeprockView extends WatchUi.WatchFace {
     }
 
     function onSettingsChanged() as Void {
-        var image_and_name = loadClassData();
+        var image_and_name = getClassData();
         dwarfBox.setImage(image_and_name[0]);
         dwarfBox.setLabel(image_and_name[1].toUpper());
     }
@@ -99,48 +99,34 @@ class deeprockView extends WatchUi.WatchFace {
     function onEnterSleep() as Void {
     }
 
-    // Load a class image and string into memory.
-    function loadClassData() as [WatchUi.BitmapResource or Graphics.BitmapReference, String] {
-        var image, name;
-        var useIcon = Application.Properties.getValue("UseClassIcon") as Boolean;
+    // Dwarf images, where index corresponds to class_number + (simplified_icon * 0b100)
+    const DwarfImages = [
+        Rez.Drawables.Driller_portrait,
+        Rez.Drawables.Engineer_portrait,
+        Rez.Drawables.Gunner_portrait,
+        Rez.Drawables.Scout_portrait,
+        Rez.Drawables.Driller_icon,
+        Rez.Drawables.Engineer_icon,
+        Rez.Drawables.Gunner_icon,
+        Rez.Drawables.Scout_icon,
+    ];
+    // Dwarf names, where index corresponds to class_number
+    const DwarfStrings = [
+        Rez.Strings.DwarfClassDriller,
+        Rez.Strings.DwarfClassEngineer,
+        Rez.Strings.DwarfClassGunner,
+        Rez.Strings.DwarfClassScout,
+    ];
 
-        // Identify class and select appropriate image resource
-        switch (Application.Properties.getValue("DwarfClass") as Integer) {
-            default:
-            case 0: // DRILLER
-                name = Rez.Strings.DwarfClassDriller;
-                if (useIcon) {
-                    image = Rez.Drawables.Driller_icon;
-                } else {
-                    image = Rez.Drawables.Driller_portrait;
-                }
-                break;
-            case 1: // ENGINEER
-                name = Rez.Strings.DwarfClassEngineer;
-                if (useIcon) {
-                    image = Rez.Drawables.Engineer_icon;
-                } else {
-                    image = Rez.Drawables.Engineer_portrait;
-                }
-                break;
-            case 2: // GUNNER
-                name = Rez.Strings.DwarfClassGunner;
-                if (useIcon) {
-                    image = Rez.Drawables.Gunner_icon;
-                } else {
-                    image = Rez.Drawables.Gunner_portrait;
-                }
-                break;
-            case 3: // SCOUT
-                name = Rez.Strings.DwarfClassScout;
-                if (useIcon) {
-                    image = Rez.Drawables.Scout_icon;
-                } else {
-                    image = Rez.Drawables.Scout_portrait;
-                }
-                break;
-        }
-        image = WatchUi.loadResource(image);
+    // Select the appropriate class image and name.
+    function getClassData() as [Lang.ResourceId, String] {
+        // Compute class name and image resource indices
+        var nameIdx = Application.Properties.getValue("DwarfClass") as Number;
+        var imageIdx = nameIdx + (Application.Properties.getValue("UseClassIcon") as Boolean ? 4 : 0);
+
+        // Select relevant resources
+        var image = DwarfImages[imageIdx];
+        var name = DwarfStrings[nameIdx];
 
         // Handle custom name, if any
         var customName = Application.Properties.getValue("CustomDwarfName") as String;

@@ -60,7 +60,7 @@ class DwarfBox extends WatchUi.Drawable {
         });
     }
 
-    function setImage(image as WatchUi.BitmapResource or Graphics.BitmapReference) {
+    function setImage(image as Graphics.BitmapType or Lang.ResourceId or Null) {
         icon.setBitmap(image);
     }
     function setLabel(name as String) {
