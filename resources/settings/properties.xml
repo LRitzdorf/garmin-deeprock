@@ -7,7 +7,7 @@
 
     <property id="ShieldColor" type="number">0x00AAFF</property>
     <property id="ShieldBgColor" type="number">0x002280</property>
-    <property id="HealthColor" type="number">0xCC0000</property>
+    <property id="HealthColor" type="number">0xFF0000</property>
     <property id="HealthBgColor" type="number">0x330000</property>
 
 </properties>
