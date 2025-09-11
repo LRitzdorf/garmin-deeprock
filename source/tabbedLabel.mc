@@ -5,9 +5,7 @@ import Toybox.System;
 import Toybox.WatchUi;
 
 class TabbedLabel extends WatchUi.Text {
-    const TAB_SLICE_SIZE as Number = 15;
-
-    private var tabBgColor as Number;
+    private var tabBgColor as Number, tabThinWidth as Number;
     private var tabLabel as WatchUi.Text;
     private var tabText as String, tabFont as Graphics.FontType;
 
@@ -18,8 +16,10 @@ class TabbedLabel extends WatchUi.Text {
         :color as Number,
         :backgroundColor as Number,
         :label as String,
+        :labelYOffset as Number,
         :tabColor as Number,
         :tabBackgroundColor as Number,
+        :tabThinStrip as Number,
         :font as Graphics.FontType,
     };
 
@@ -35,13 +35,15 @@ class TabbedLabel extends WatchUi.Text {
         } else {
             tabBgColor = Graphics.COLOR_BLACK;
         }
+        tabThinWidth = params[:tabThinStrip];
         tabLabel = new WatchUi.Text({
             :text=>params[:label],
             :color=>params[:tabColor],
             :bgColor=>params[:tabBackgroundColor],
-            :locX=>locX + 2,
-            :locY=>locY - 20,
+            :locX=>locX + tabThinWidth,
+            :locY=>locY - params[:labelYOffset],
             :font=>Graphics.FONT_XTINY,
+            :justification=>Graphics.TEXT_JUSTIFY_LEFT+Graphics.TEXT_JUSTIFY_VCENTER,
         });
         tabText = params[:label];
         tabFont = Graphics.FONT_XTINY;
@@ -51,7 +53,7 @@ class TabbedLabel extends WatchUi.Text {
         // Padding looks way better
         Text.setText(" " + text + " ");
     }
-    function setLabel(text as String or ResourceId) {
+    function setLabel(text as String) {
         tabLabel.setText(text);
         tabText = text;
     }
@@ -62,11 +64,11 @@ class TabbedLabel extends WatchUi.Text {
 
         // Calculate tab bar vertex positions
         width = dc.getTextWidthInPixels(mText, mFont);  // Does this not happen automatically during draw?
+        var upperEdge = locY - tabThinWidth;
+        var rightEdge = locX + width - 1;  // Off-by-one
         var tabDims = dc.getTextDimensions(tabText, tabFont);
-        var tabUpperEdge = locY - tabDims[1] + 4;
+        var tabUpperEdge = tabLabel.locY - tabDims[1]/2.5;  // Calculated height looks excessive
         var tabRightEdge = tabLabel.locX + tabDims[0];
-        var upperEdge = tabUpperEdge + TAB_SLICE_SIZE;
-        var rightEdge = locX + width - 1;  // Not sure why, but the right edge is always off by one pixel
 
         // Draw decorations over background
         dc.setColor(tabBgColor, Graphics.COLOR_TRANSPARENT);
@@ -74,7 +76,7 @@ class TabbedLabel extends WatchUi.Text {
             [locX, locY],
             [locX, tabUpperEdge],
             [tabRightEdge, tabUpperEdge],
-            [tabRightEdge + TAB_SLICE_SIZE, upperEdge],
+            [tabRightEdge + (upperEdge - tabUpperEdge) + 1, upperEdge],  // Off-by-one
             [rightEdge, upperEdge],
             [rightEdge, locY],
         ]);
