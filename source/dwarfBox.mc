@@ -35,10 +35,10 @@ class DwarfBox extends WatchUi.Drawable {
         label = new WatchUi.Text({
             :text=>"KARL",
             :locX=>rightIconMargin,
-            :locY=>locY - 5,
+            :locY=>locY + yStep/2,
             :font=>Graphics.FONT_XTINY,
             :color=>params[:color],
-            :justification=>Graphics.TEXT_JUSTIFY_LEFT,
+            :justification=>Graphics.TEXT_JUSTIFY_LEFT+Graphics.TEXT_JUSTIFY_VCENTER,
         });
 
         shieldBar = new IconGauge({
