@@ -16,8 +16,8 @@
     <string id="DwarfClassGunner">Gunner</string>
     <string id="DwarfClassScout">Scout</string>
 
-    <string id="GoalTypeSteps">Step goal reached!</string>
-    <string id="GoalTypeFloors">Floor goal reached!</string>
-    <string id="GoalTypeActivity">Active minutes goal reached!</string>
+    <string id="GoalTypeSteps">Step goal\nreached!</string>
+    <string id="GoalTypeFloors">Floor goal\nreached!</string>
+    <string id="GoalTypeActivity">Active minutes\ngoal reached!</string>
 
 </strings>

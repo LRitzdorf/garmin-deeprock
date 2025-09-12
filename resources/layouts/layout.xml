@@ -66,19 +66,12 @@
         justification="Graphics.TEXT_JUSTIFY_CENTER"
         color="Graphics.COLOR_YELLOW"
     />
-    <text-area id="Message"
+    <label id="Message"
         x="center" y="60%"
-        width="70%" height="30%"
+        font="Graphics.FONT_SMALL"
         justification="Graphics.TEXT_JUSTIFY_CENTER"
         color="Graphics.COLOR_WHITE"
-    >
-        <fonts>
-            <font>Graphics.FONT_MEDIUM</font>
-            <font>Graphics.FONT_SMALL</font>
-            <font>Graphics.FONT_TINY</font>
-            <font>Graphics.FONT_XTINY</font>
-        </fonts>
-    </text-area>
+    />
 </layout>
 
 </resources>

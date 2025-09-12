@@ -8,7 +8,7 @@ class deeprockGoalView extends WatchUi.View {
 
     private var goalType as Application.GoalType;
     private var splashImg as Bitmap?;
-    private var messageBox as TextArea?;
+    private var messageBox as Text?;
 
     function initialize() {
         View.initialize();
@@ -19,7 +19,7 @@ class deeprockGoalView extends WatchUi.View {
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.GoalScreen(dc));
         splashImg = View.findDrawableById("Splash") as Bitmap;
-        messageBox = View.findDrawableById("Message") as TextArea;
+        messageBox = View.findDrawableById("Message") as Text;
     }
 
     // Called when this View is brought to the foreground. Restore
