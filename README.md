@@ -14,7 +14,7 @@ Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09
 - [X] Daily steps and calories burned (mission length and complexity, respectively)
 - [X] Free-form class name field
 - [X] Selectable class icons
-- [ ] Appropriately dwarfy goal screens
+- [X] Appropriately dwarfy goal screens
 - [~] Broader device support
 
 ## Bugs

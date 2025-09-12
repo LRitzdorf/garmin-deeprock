@@ -58,14 +58,27 @@
 <layout id="GoalScreen">
     <drawable id="Splash" class="WatchUi.Bitmap">
         <param name="locX">center</param>
-        <param name="locY">top</param>
+        <param name="locY">10</param>
     </drawable>
-    <text-area id="Message"
-        x="center" y="50%"
-        width="fill" height="50%"
+    <label id="RnS"
+        text="ROCK AND STONE!"
+        x="center" y="45%"
         justification="Graphics.TEXT_JUSTIFY_CENTER"
         color="Graphics.COLOR_YELLOW"
     />
+    <text-area id="Message"
+        x="center" y="60%"
+        width="70%" height="30%"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_WHITE"
+    >
+        <fonts>
+            <font>Graphics.FONT_MEDIUM</font>
+            <font>Graphics.FONT_SMALL</font>
+            <font>Graphics.FONT_TINY</font>
+            <font>Graphics.FONT_XTINY</font>
+        </fonts>
+    </text-area>
 </layout>
 
 </resources>

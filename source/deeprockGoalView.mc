@@ -45,8 +45,7 @@ class deeprockGoalView extends WatchUi.View {
         }
 
         // Set the goal message
-        var goalString = Application.loadResource(goalName);
-        messageBox.setText(Lang.format("ROCK AND STONE!\nYou hit your $1$ goal", [goalString]));
+        messageBox.setText(WatchUi.loadResource(goalName));
     }
 
     // Update the view
