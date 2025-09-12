@@ -8,6 +8,7 @@ class deeprockGoalView extends WatchUi.View {
 
     private var goalType as Application.GoalType;
     private var splashImg as Bitmap?;
+    private var messageBox as TextArea?;
 
     function initialize() {
         View.initialize();
@@ -18,18 +19,17 @@ class deeprockGoalView extends WatchUi.View {
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.GoalScreen(dc));
         splashImg = View.findDrawableById("Splash") as Bitmap;
+        messageBox = View.findDrawableById("Message") as TextArea;
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
+        // Load splash image
         splashImg.setBitmap(Rez.Drawables.Pickaxe);
-    }
 
-    // Update the view
-    function onUpdate(dc as Dc) as Void {
-        // Load the relevant goal text
+        // Load relevant goal text
         var goalName;
         switch (goalType) {
             default:
@@ -45,9 +45,12 @@ class deeprockGoalView extends WatchUi.View {
         }
 
         // Set the goal message
-        var messageBox = View.findDrawableById("Message") as TextArea;
-        messageBox.setText(Lang.format("ROCK AND STONE!\nYou hit your $1$ goal", [goalName]));
+        var goalString = Application.loadResource(goalName);
+        messageBox.setText(Lang.format("ROCK AND STONE!\nYou hit your $1$ goal", [goalString]));
+    }
 
+    // Update the view
+    function onUpdate(dc as Dc) as Void {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
@@ -57,6 +60,7 @@ class deeprockGoalView extends WatchUi.View {
     // memory.
     function onHide() as Void {
         splashImg.setBitmap(null);
+        messageBox.setText("");
     }
 
     // Set the goal type for use while drawing
