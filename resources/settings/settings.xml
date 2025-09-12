@@ -19,6 +19,10 @@
         </setting>
     </group>
 
+    <setting propertyKey="@Properties.UseCustomGoalScreen" title="@Strings.CustomGoalScreenTitle">
+        <settingConfig type="boolean" />
+    </setting>
+
     <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
         <settingConfig type="boolean" />
     </setting>

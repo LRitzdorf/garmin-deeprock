@@ -10,6 +10,7 @@ The following graphical assets are reused under the Apache license from C-D-Lewi
 - Gunner_icon.png
 - Gunner_portrait.png
 - health.png
+- pickaxe.png
 - Scout_icon.png
 - Scout_portrait.png
 - shield.png

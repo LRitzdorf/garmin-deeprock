@@ -4,7 +4,8 @@ import Toybox.WatchUi;
 
 class deeprockApp extends Application.AppBase {
 
-    private var view;
+    private var faceView as deeprockView?;
+    private var goalView as deeprockGoalView?;
 
     function initialize() {
         AppBase.initialize();
@@ -20,13 +21,27 @@ class deeprockApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        view = new deeprockView();
-        return [ view ];
+        if (faceView == null) {
+            faceView = new deeprockView();
+        }
+        return [ faceView ];
+    }
+
+    // Return the goal view of your application here, or null to fall back to system
+    function getGoalView(goalType as GoalType) as [View] or Null {
+        if (!(Application.Properties.getValue("UseCustomGoalScreen") as Boolean)) {
+            return null;
+        }
+        if (goalView == null) {
+            goalView = new deeprockGoalView();
+        }
+        goalView.setGoalType(goalType);
+        return [ goalView ];
     }
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() as Void {
-        view.onSettingsChanged();
+        faceView.onSettingsChanged();
         WatchUi.requestUpdate();
     }
 

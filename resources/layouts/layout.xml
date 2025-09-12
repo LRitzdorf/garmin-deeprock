@@ -57,4 +57,19 @@
     </drawable>
 </layout>
 
+
+<layout id="GoalScreen">
+    <bitmap id="Pickaxe"
+        filename="../../resources/drawables/pickaxe.png"
+        x="center" y="top"
+        scaleY="50%"
+    />
+    <text-area id="Message"
+        x="center" y="50%"
+        width="fill" height="50%"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_YELLOW"
+    />
+</layout>
+
 </resources>

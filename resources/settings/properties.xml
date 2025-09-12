@@ -3,6 +3,7 @@
     <property id="DwarfClass" type="number">2</property>
     <property id="UseClassIcon" type="boolean">false</property>
     <property id="CustomDwarfName" type="string"></property>
+    <property id="UseCustomGoalScreen" type="boolean">true</property>
     <property id="UseMilitaryFormat" type="boolean">false</property>
 
     <property id="ShieldColor" type="number">0x00AAFF</property>
