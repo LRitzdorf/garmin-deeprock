@@ -1,6 +1,9 @@
 <drawables xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
     <bitmap id="LauncherIcon" filename="launcher_icon.png" dithering="none" />
 
+    <bitmap id="Background" filename="../../resources/drawables/bg.png" scaleX="100%" scaleY="100%" />
+    <bitmap id="Pickaxe" filename="../../resources/drawables/pickaxe.png" scaleY="50%" />
+
     <bitmap id="Driller_portrait" filename="Driller_portrait.png" scaleY="20%" />
     <bitmap id="Engineer_portrait" filename="Engineer_portrait.png" scaleY="20%" />
     <bitmap id="Gunner_portrait" filename="Gunner_portrait.png" scaleY="20%" />

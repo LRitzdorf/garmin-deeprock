@@ -7,6 +7,7 @@ using Toybox.Time.Gregorian;
 
 class deeprockView extends WatchUi.WatchFace {
 
+    private var backgroundImg as Bitmap?;
     private var dwarfBox as DwarfBox?;
     private var timeLabel as TabbedLabel?, dateLabel as TabbedLabel?;
     private var statsBox as StatsBox?;
@@ -18,6 +19,7 @@ class deeprockView extends WatchUi.WatchFace {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
+        backgroundImg = View.findDrawableById("Background") as Bitmap;
         dwarfBox = View.findDrawableById("DwarfBox") as DwarfBox;
         timeLabel = View.findDrawableById("TimeLabel") as TabbedLabel;
         dateLabel = View.findDrawableById("DateLabel") as TabbedLabel;
@@ -29,6 +31,7 @@ class deeprockView extends WatchUi.WatchFace {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
+        backgroundImg.setBitmap(Rez.Drawables.Background);
     }
 
     // Update the view
@@ -89,6 +92,7 @@ class deeprockView extends WatchUi.WatchFace {
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() as Void {
+        backgroundImg.setBitmap(null);
     }
 
     // The user has just looked at their watch. Timers and animations may be started here.

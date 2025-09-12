@@ -7,6 +7,7 @@ import Toybox.WatchUi;
 class deeprockGoalView extends WatchUi.View {
 
     private var goalType as Application.GoalType;
+    private var splashImg as Bitmap?;
 
     function initialize() {
         View.initialize();
@@ -16,12 +17,14 @@ class deeprockGoalView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.GoalScreen(dc));
+        splashImg = View.findDrawableById("Splash") as Bitmap;
     }
 
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
+        splashImg.setBitmap(Rez.Drawables.Pickaxe);
     }
 
     // Update the view
@@ -53,6 +56,7 @@ class deeprockGoalView extends WatchUi.View {
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() as Void {
+        splashImg.setBitmap(null);
     }
 
     // Set the goal type for use while drawing
