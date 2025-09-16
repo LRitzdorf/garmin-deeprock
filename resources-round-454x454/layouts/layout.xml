@@ -1,6 +1,4 @@
 <layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <drawable id="Background" class="WatchUi.Bitmap" />
-
     <drawable id="DwarfBox" class="DwarfBox">
         <param name="locX">55</param>
         <param name="locY">45</param>

@@ -7,7 +7,7 @@ import Toybox.WatchUi;
 class deeprockGoalView extends WatchUi.View {
 
     private var goalType as Application.GoalType;
-    private var splashImg as Bitmap?;
+    private var splashImg as Graphics.BitmapType?;
     private var messageBox as Text?;
 
     function initialize() {
@@ -18,7 +18,6 @@ class deeprockGoalView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.GoalScreen(dc));
-        splashImg = View.findDrawableById("Splash") as Bitmap;
         messageBox = View.findDrawableById("Message") as Text;
     }
 
@@ -27,7 +26,7 @@ class deeprockGoalView extends WatchUi.View {
     // loading resources into memory.
     function onShow() as Void {
         // Load splash image
-        splashImg.setBitmap(Rez.Drawables.Pickaxe);
+        splashImg = WatchUi.loadResource(Rez.Drawables.Pickaxe);
 
         // Load relevant goal text
         var goalName;
@@ -50,15 +49,22 @@ class deeprockGoalView extends WatchUi.View {
 
     // Update the view
     function onUpdate(dc as Dc) as Void {
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
+        // Fill with black, then draw splash image
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+        dc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
+        dc.drawBitmap((dc.getWidth()-splashImg.getWidth())/2, 10, splashImg);
+
+        // Manually draw the layout
+        for (var i = 0; i < mLayout.size(); i++) {
+            mLayout[i].draw(dc);
+        }
     }
 
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() as Void {
-        splashImg.setBitmap(null);
+        splashImg = null;
         messageBox.setText("");
     }
 
