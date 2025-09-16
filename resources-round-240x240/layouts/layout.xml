@@ -1,0 +1,77 @@
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+<layout id="WatchFace">
+    <drawable id="Background" class="WatchUi.Bitmap" />
+
+    <drawable id="DwarfBox" class="DwarfBox">
+        <param name="locX">40</param>
+        <param name="locY">15</param>
+        <param name="width">110</param>
+        <param name="rezId">@Rez.Drawables.Scout_portrait</param>
+        <param name="color">Graphics.COLOR_YELLOW</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+    </drawable>
+
+    <bitmap id="DeepRockLogo"
+        filename="../../resources/drawables/drg_logo.png"
+        x="175" y="80"
+        scaleX="20%"
+    />
+
+    <drawable id="TimeLabel" class="TabbedLabel">
+        <param name="locX">20</param>
+        <param name="locY">91</param>
+        <param name="label">"MISSION TIME"</param>
+        <param name="labelYOffset">10</param>
+        <param name="tabThinStrip">3</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_LARGE</param>
+    </drawable>
+    <drawable id="DateLabel" class="TabbedLabel">
+        <param name="locX">20</param>
+        <param name="locY">154</param>
+        <param name="label">"MISSION DATE"</param>
+        <param name="labelYOffset">10</param>
+        <param name="tabThinStrip">3</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_SMALL</param>
+    </drawable>
+
+    <drawable id="StatsBox" class="StatsBox">
+        <param name="locY">190</param>
+        <param name="width">170</param>
+        <param name="stepsRezId">@Rez.Drawables.StepsIcon</param>
+        <param name="caloriesRezId">@Rez.Drawables.CaloriesIcon</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_XTINY</param>
+    </drawable>
+</layout>
+
+
+<layout id="GoalScreen">
+    <drawable id="Splash" class="WatchUi.Bitmap">
+        <param name="locX">center</param>
+        <param name="locY">10</param>
+    </drawable>
+    <label id="RnS"
+        text="ROCK AND STONE!"
+        x="center" y="45%"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_YELLOW"
+    />
+    <label id="Message"
+        x="center" y="60%"
+        font="Graphics.FONT_SMALL"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_WHITE"
+    />
+</layout>
+
+</resources>
