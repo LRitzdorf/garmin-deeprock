@@ -1,6 +1,4 @@
-<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-
-<layout id="WatchFace">
+<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
     <drawable id="Background" class="WatchUi.Bitmap" />
 
     <drawable id="DwarfBox" class="DwarfBox">
@@ -53,25 +51,3 @@
         <param name="font">Graphics.FONT_XTINY</param>
     </drawable>
 </layout>
-
-
-<layout id="GoalScreen">
-    <drawable id="Splash" class="WatchUi.Bitmap">
-        <param name="locX">center</param>
-        <param name="locY">10</param>
-    </drawable>
-    <label id="RnS"
-        text="ROCK AND STONE!"
-        x="center" y="45%"
-        justification="Graphics.TEXT_JUSTIFY_CENTER"
-        color="Graphics.COLOR_YELLOW"
-    />
-    <label id="Message"
-        x="center" y="60%"
-        font="Graphics.FONT_SMALL"
-        justification="Graphics.TEXT_JUSTIFY_CENTER"
-        color="Graphics.COLOR_WHITE"
-    />
-</layout>
-
-</resources>
