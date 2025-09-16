@@ -1,1 +1,7 @@
 project.manifest = manifest.xml
+
+# 240x240 Vivoactive devices use different-sized fonts, and need their own layouts
+vivoactive3.resourcePath = $(base.resourcePath);resources-vivoactive240
+vivoactive3d.resourcePath = $(base.resourcePath);resources-vivoactive240
+vivoactive3m.resourcePath = $(base.resourcePath);resources-vivoactive240
+vivoactive3mlte.resourcePath = $(base.resourcePath);resources-vivoactive240
