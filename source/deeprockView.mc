@@ -46,7 +46,7 @@ class deeprockView extends WatchUi.WatchFace {
                 hours = hours - 12;
             }
         } else {
-            if (Application.Properties.getValue("UseMilitaryFormat")) {
+            if (getProp("UseMilitaryFormat")) {
                 timeFormat = "$1$$2$";
             }
         }
@@ -127,15 +127,15 @@ class deeprockView extends WatchUi.WatchFace {
     // Select the appropriate class image and name.
     function getClassData() as [Lang.ResourceId, String] {
         // Compute class name and image resource indices
-        var nameIdx = Application.Properties.getValue("DwarfClass") as Number;
-        var imageIdx = nameIdx + (Application.Properties.getValue("UseClassIcon") as Boolean ? 4 : 0);
+        var nameIdx = getProp("DwarfClass") as Number;
+        var imageIdx = nameIdx + (getProp("UseClassIcon") as Boolean ? 4 : 0);
 
         // Select relevant resources
         var image = DwarfImages[imageIdx];
         var name = DwarfStrings[nameIdx];
 
         // Handle custom name, if any
-        var customName = Application.Properties.getValue("CustomDwarfName") as String;
+        var customName = getProp("CustomDwarfName") as String;
         if (customName.length() > 0) {
             name = customName;
         } else {

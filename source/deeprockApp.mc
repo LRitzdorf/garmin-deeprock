@@ -29,7 +29,7 @@ class deeprockApp extends Application.AppBase {
 
     // Return the goal view of your application here, or null to fall back to system
     function getGoalView(goalType as GoalType) as [View] or Null {
-        if (!(Application.Properties.getValue("UseCustomGoalScreen") as Boolean)) {
+        if (!(getProp("UseCustomGoalScreen") as Boolean)) {
             return null;
         }
         if (goalView == null) {
@@ -49,4 +49,17 @@ class deeprockApp extends Application.AppBase {
 
 function getApp() as deeprockApp {
     return Application.getApp() as deeprockApp;
+}
+
+
+// Retrieve settings based on the device's API version
+
+(:pre240)
+function getProp(key as String) as Application.PropertyValueType {
+    return (deeprockApp as AppBase).getProperty(key);
+}
+
+(:post240)
+function getProp(key as String) as Application.PropertyValueType {
+    return Application.Properties.getValue(key);
 }

@@ -45,8 +45,8 @@ class DwarfBox extends WatchUi.Drawable {
             :locX=>rightIconMargin,
             :locY=>locY + yStep,
             :width=>width,
-            :color=>Properties.getValue("ShieldColor") as Number,
-            :bg=>Properties.getValue("ShieldBgColor") as Number,
+            :color=>getProp("ShieldColor") as Number,
+            :bg=>getProp("ShieldBgColor") as Number,
             :rezId=>Rez.Drawables.ShieldIcon,
         });
 
@@ -54,8 +54,8 @@ class DwarfBox extends WatchUi.Drawable {
             :locX=>rightIconMargin,
             :locY=>locY + 2*yStep,
             :width=>width,
-            :color=>Properties.getValue("HealthColor") as Number,
-            :bg=>Properties.getValue("HealthBgColor") as Number,
+            :color=>getProp("HealthColor") as Number,
+            :bg=>getProp("HealthBgColor") as Number,
             :rezId=>Rez.Drawables.HealthIcon,
         });
     }
