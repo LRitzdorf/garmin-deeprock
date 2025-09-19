@@ -1,0 +1,51 @@
+<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <drawable id="DwarfBox" class="DwarfBox">
+        <param name="locX">5</param>
+        <param name="locY">5</param>
+        <param name="width">150</param>
+        <param name="rezId">@Rez.Drawables.Scout_portrait</param>
+        <param name="color">Graphics.COLOR_YELLOW</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+    </drawable>
+
+    <bitmap id="DeepRockLogo"
+        filename="../../resources/drawables/drg_logo.png"
+        x="140" y="60"
+        scaleX="20%"
+    />
+
+    <drawable id="TimeLabel" class="TabbedLabel">
+        <param name="locX">10</param>
+        <param name="locY">58</param>
+        <param name="label">"MISSION TIME"</param>
+        <param name="labelYOffset">8</param>
+        <param name="tabThinStrip">2</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_MEDIUM</param>
+    </drawable>
+    <drawable id="DateLabel" class="TabbedLabel">
+        <param name="locX">10</param>
+        <param name="locY">106</param>
+        <param name="label">"MISSION DATE"</param>
+        <param name="labelYOffset">8</param>
+        <param name="tabThinStrip">2</param>
+        <param name="tabColor">Graphics.COLOR_BLACK</param>
+        <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_SMALL</param>
+    </drawable>
+
+    <drawable id="StatsBox" class="StatsBox">
+        <param name="locY">131</param>
+        <param name="width">140</param>
+        <param name="stepsRezId">@Rez.Drawables.StepsIcon</param>
+        <param name="caloriesRezId">@Rez.Drawables.CaloriesIcon</param>
+        <param name="color">Graphics.COLOR_WHITE</param>
+        <param name="backgroundColor">Graphics.COLOR_BLACK</param>
+        <param name="font">Graphics.FONT_XTINY</param>
+    </drawable>
+</layout>

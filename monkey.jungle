@@ -6,6 +6,9 @@ vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive240
 vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);resources-vivoactive240
 vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoactive240
 
+# The Forerunner 920XT is 16-color and also uses different fonts
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-16color;resources-fr920xt
+
 # Most devices are pretty recent
 base.excludeAnnotations = pre240
 # But a few are pre-CIQ 2.4.0, and need to use old API calls

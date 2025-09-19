@@ -14,6 +14,7 @@
             "Monkey C: Edit Products" - Lets you add or remove any product
         -->
         <iq:products>
+            <iq:product id="epix"/>
             <iq:product id="fenix5"/>
             <iq:product id="fenix5plus"/>
             <iq:product id="fenix5splus"/>
@@ -36,8 +37,10 @@
             <iq:product id="fenix8solar47mm"/>
             <iq:product id="fenix8solar51mm"/>
             <iq:product id="fenixe"/>
+            <iq:product id="fr920xt"/>
             <iq:product id="instinct3amoled45mm"/>
             <iq:product id="instinct3amoled50mm"/>
+            <iq:product id="vivoactive"/>
             <iq:product id="vivoactive3"/>
             <iq:product id="vivoactive3d"/>
             <iq:product id="vivoactive3m"/>
