@@ -1,5 +1,11 @@
 project.manifest = manifest.xml
 
+# Some devices have 16-color screens, which need tweaked color settings
+fr230.resourcePath = $(fr230.resourcePath);resources-16color
+fr235.resourcePath = $(fr235.resourcePath);resources-16color
+fr630.resourcePath = $(fr630.resourcePath);resources-16color
+fr735xt.resourcePath = $(fr735xt.resourcePath);resources-16color
+
 # 240x240 Vivoactive devices use different-sized fonts, and need their own layouts
 vivoactive3.resourcePath = $(vivoactive3.resourcePath);resources-vivoactive240
 vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive240
