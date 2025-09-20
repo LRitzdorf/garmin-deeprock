@@ -1,6 +1,10 @@
 project.manifest = manifest.xml
 
 # Some devices have 16-color screens, which need tweaked color settings
+d2bravo.resourcePath = $(d2bravo.resourcePath);resources-16color
+d2bravo_titanium.resourcePath = $(d2bravo_titanium.resourcePath);resources-16color
+fenix3.resourcePath = $(fenix3.resourcePath);resources-16color
+fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-16color
 fr230.resourcePath = $(fr230.resourcePath);resources-16color
 fr235.resourcePath = $(fr235.resourcePath);resources-16color
 fr630.resourcePath = $(fr630.resourcePath);resources-16color
