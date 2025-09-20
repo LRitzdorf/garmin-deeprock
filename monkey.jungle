@@ -1,6 +1,9 @@
 project.manifest = manifest.xml
 
-# Some devices have 16-color screens, which need tweaked color settings
+# Some devices have 8- or 16-color screens, which need tweaked color settings
+fr45.resourcePath = $(fr45.resourcePath);resources-8color
+fr55.resourcePath = $(fr55.resourcePath);resources-8color
+garminswim2.resourcePath = $(garminswim2.resourcePath);resources-8color
 d2bravo.resourcePath = $(d2bravo.resourcePath);resources-16color
 d2bravo_titanium.resourcePath = $(d2bravo_titanium.resourcePath);resources-16color
 fenix3.resourcePath = $(fenix3.resourcePath);resources-16color

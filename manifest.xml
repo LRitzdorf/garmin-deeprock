@@ -43,9 +43,12 @@
             <iq:product id="fenixe"/>
             <iq:product id="fr230"/>
             <iq:product id="fr235"/>
+            <iq:product id="fr45"/>
+            <iq:product id="fr55"/>
             <iq:product id="fr630"/>
             <iq:product id="fr735xt"/>
             <iq:product id="fr920xt"/>
+            <iq:product id="garminswim2"/>
             <iq:product id="instinct3amoled45mm"/>
             <iq:product id="instinct3amoled50mm"/>
             <iq:product id="vivoactive"/>
