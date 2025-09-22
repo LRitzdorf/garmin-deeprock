@@ -1,5 +1,7 @@
 # Deep Rock for Garmin
 
+[Now available on the Garmin Connect IQ Store!](https://apps.garmin.com/apps/59ec3041-55be-45ef-9b75-351ced16c6a3)
+
 ![DRG logo](Deep_Rock_Galactic_Logo.png)
 
 A Deep Rock Galactic watch face for Garmin smartwatches.
