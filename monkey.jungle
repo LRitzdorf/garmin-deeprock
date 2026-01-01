@@ -1,4 +1,5 @@
 project.manifest = manifest.xml
+project.typecheck = 1
 
 # Some devices have 8- or 16-color screens, which need tweaked color settings
 fr45.resourcePath = $(fr45.resourcePath);resources-8color
