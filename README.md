@@ -19,7 +19,9 @@ Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09
 - [X] Free-form class name field
 - [X] Selectable class icons
 - [X] Appropriately dwarfy goal screens
-- [~] Broader device support
+- [X] Broader device support
+  - Transparency on 16-color displays seems unsupported? See [forum post](https://forums.garmin.com/developer/connect-iq/f/discussion/422434/bitmap-transparency-on-semi-round-16-color-watches)
+  - Dual-color screens don't really fit well, and would require some serious design work to be viable
 
 ## Bugs
 
