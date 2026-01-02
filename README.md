@@ -7,10 +7,6 @@
 A Deep Rock Galactic watch face for Garmin smartwatches.
 Based on @C-D-Lewis's faces for [Fitbit](https://gallery.fitbit.com/details/cb09baf4-95ba-4f06-b614-1382495c7b29) ([source](https://github.com/C-D-Lewis/fitbit-dev/tree/master/faces/deeprock)) and [Pebble](https://apps.rebble.io/en_US/application/67def87c122b40000904b4f0) ([source](https://github.com/C-D-Lewis/pebble-dev/tree/master/watchfaces/deep-rock)).
 
-> [!NOTE]
-> Currently in development; support is being added for more devices.
-> Let me know if you'd like your device supported!
-
 ## Features
 
 - [X] Time and date, obviously
