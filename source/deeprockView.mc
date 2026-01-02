@@ -7,7 +7,8 @@ using Toybox.Time.Gregorian;
 
 class deeprockView extends WatchUi.WatchFace {
 
-    private var backgroundImg as Graphics.BitmapType?;
+    (:bgBitmap) private var backgroundImg as Graphics.BitmapType?;
+    (:bgColor)  private var backgroundColor as Graphics.ColorValue?;
     private var dwarfBox as DwarfBox?;
     private var timeLabel as TabbedLabel?, dateLabel as TabbedLabel?;
     private var statsBox as StatsBox?;
@@ -29,8 +30,13 @@ class deeprockView extends WatchUi.WatchFace {
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
+    (:bgBitmap)
     function onShow() as Void {
         backgroundImg = WatchUi.loadResource(Rez.Drawables.Background);
+    }
+    (:bgColor)
+    function onShow() as Void {
+        backgroundColor = getProp("BgFillColor");
     }
 
     // Update the view
@@ -77,7 +83,7 @@ class deeprockView extends WatchUi.WatchFace {
         statsBox.setSteps(steps);
         statsBox.setCalories(calories);
 
-        dc.drawBitmap(0, 0, backgroundImg);
+        drawBackground(dc);
         // Manually draw the layout
         for (var i = 0; i < mLayout.size(); i++) {
             mLayout[i].draw(dc);
@@ -93,8 +99,13 @@ class deeprockView extends WatchUi.WatchFace {
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
+    (:bgBitmap)
     function onHide() as Void {
         backgroundImg = null;
+    }
+    (:bgColor)
+    function onHide() as Void {
+        // backgroundColor is just a numerical color value, no need to free it
     }
 
     // The user has just looked at their watch. Timers and animations may be started here.
@@ -143,6 +154,17 @@ class deeprockView extends WatchUi.WatchFace {
         }
 
         return [image, name];
+    }
+
+    // Draw the background, either an image or a solid color
+    (:bgBitmap)
+    function drawBackground(dc as Dc) as Void {
+        dc.drawBitmap(0, 0, backgroundImg);
+    }
+    (:bgColor)
+    function drawBackground(dc as Dc) as Void {
+        dc.setColor(backgroundColor, Graphics.COLOR_TRANSPARENT);
+        dc.fillRectangle(0, 0, dc.getWidth(), dc.getHeight());
     }
 
 }

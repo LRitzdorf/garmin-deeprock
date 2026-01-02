@@ -23,18 +23,21 @@ vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoact
 # The Forerunner 920XT is 16-color and also uses different fonts
 fr920xt.resourcePath = $(fr920xt.resourcePath);resources-16color;resources-fr920xt
 
-# Most devices are pretty recent
-base.excludeAnnotations = pre240
+# Most devices are pretty recent and have enough memory for a bitmap background
+base.excludeAnnotations = pre240;bgColor
 # But a few are pre-CIQ 2.4.0, and need to use old API calls
-d2bravo.excludeAnnotations = post240
-d2bravo_titanium.excludeAnnotations = post240
-epix.excludeAnnotations = post240
-fenix3.excludeAnnotations = post240
-fenix3_hr.excludeAnnotations = post240
-fr230.excludeAnnotations = post240
-fr235.excludeAnnotations = post240
-fr45.excludeAnnotations = post240
-fr630.excludeAnnotations = post240
-fr920xt.excludeAnnotations = post240
-garminswim2.excludeAnnotations = post240
-vivoactive.excludeAnnotations = post240
+# Others have limited memory, and must use a solid color background
+d2bravo.excludeAnnotations = post240;bgColor
+d2bravo_titanium.excludeAnnotations = post240;bgColor
+enduro.excludeAnnotations = pre240;bgBitmap
+epix.excludeAnnotations = post240;bgColor
+fenix3.excludeAnnotations = post240;bgColor
+fenix3_hr.excludeAnnotations = post240;bgColor
+fenix5s.excludeAnnotations = pre240;bgBitmap
+fr230.excludeAnnotations = post240;bgColor
+fr235.excludeAnnotations = post240;bgColor
+fr45.excludeAnnotations = post240;bgColor
+fr630.excludeAnnotations = post240;bgColor
+fr920xt.excludeAnnotations = post240;bgColor
+garminswim2.excludeAnnotations = post240;bgColor
+vivoactive.excludeAnnotations = post240;bgColor

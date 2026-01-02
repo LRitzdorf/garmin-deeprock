@@ -11,4 +11,6 @@
     <property id="HealthColor" type="number">0xFF0000</property>
     <property id="HealthBgColor" type="number">0x330000</property>
 
+    <property id="BgFillColor" type="number">0x005500</property>
+
 </properties>
