@@ -24,7 +24,7 @@
         <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
         <param name="color">Graphics.COLOR_WHITE</param>
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
-        <param name="font">Graphics.FONT_LARGE</param>
+        <param name="font">Graphics.FONT_MEDIUM</param>
     </drawable>
     <drawable id="DateLabel" class="TabbedLabel">
         <param name="locX">20</param>

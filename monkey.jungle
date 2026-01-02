@@ -31,9 +31,6 @@ vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive240
 vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);resources-vivoactive240
 vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoactive240
 
-# The Forerunner 920XT also uses different fonts
-fr920xt.resourcePath = $(fr920xt.resourcePath);resources-fr920xt
-
 # Most devices are pretty recent and have enough memory for a bitmap background
 base.excludeAnnotations = pre240;bgColor
 # But a few are pre-CIQ 2.4.0, and need to use old API calls

@@ -16,7 +16,7 @@
 
     <drawable id="TimeLabel" class="TabbedLabel">
         <param name="locX">20</param>
-        <param name="locY">72</param>
+        <param name="locY">70</param>
         <param name="label">"MISSION TIME"</param>
         <param name="labelYOffset">8</param>
         <param name="tabThinStrip">3</param>
@@ -28,7 +28,7 @@
     </drawable>
     <drawable id="DateLabel" class="TabbedLabel">
         <param name="locX">20</param>
-        <param name="locY">127</param>
+        <param name="locY">123</param>
         <param name="label">"MISSION DATE"</param>
         <param name="labelYOffset">8</param>
         <param name="tabThinStrip">3</param>
@@ -36,7 +36,7 @@
         <param name="tabBackgroundColor">Graphics.COLOR_YELLOW</param>
         <param name="color">Graphics.COLOR_WHITE</param>
         <param name="backgroundColor">Graphics.COLOR_BLACK</param>
-        <param name="font">Graphics.FONT_SMALL</param>
+        <param name="font">Graphics.FONT_MEDIUM</param>
     </drawable>
 
     <drawable id="StatsBox" class="StatsBox">
