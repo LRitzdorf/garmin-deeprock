@@ -13,11 +13,17 @@ fr230.resourcePath = $(fr230.resourcePath);resources-16color
 fr235.resourcePath = $(fr235.resourcePath);resources-16color
 fr630.resourcePath = $(fr630.resourcePath);resources-16color
 fr735xt.resourcePath = $(fr735xt.resourcePath);resources-16color
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-16color
 
 # Larger Approach devices use different-sized fonts, and need their own layouts
 approachs50.resourcePath = $(approachs50.resourcePath);resources-approach390
 approachs7042mm.resourcePath = $(approachs7042mm.resourcePath);resources-approach390
 approachs7047mm.resourcePath = $(approachs7047mm.resourcePath);resources-approach454
+
+# Fenix and Forerunner devices use different-sized fonts, and need their own layouts
+fenix843mm.resourcePath = $(fenix843mm.resourcePath);resources-fenixfr416
+fenixe.resourcePath = $(fenixe.resourcePath);resources-fenixfr416
+fr265.resourcePath = $(fr265.resourcePath);resources-fenixfr416
 
 # 240x240 Vivoactive devices use different-sized fonts, and need their own layouts
 vivoactive3.resourcePath = $(vivoactive3.resourcePath);resources-vivoactive240
@@ -25,8 +31,8 @@ vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive240
 vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);resources-vivoactive240
 vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoactive240
 
-# The Forerunner 920XT is 16-color and also uses different fonts
-fr920xt.resourcePath = $(fr920xt.resourcePath);resources-16color;resources-fr920xt
+# The Forerunner 920XT also uses different fonts
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-fr920xt
 
 # Most devices are pretty recent and have enough memory for a bitmap background
 base.excludeAnnotations = pre240;bgColor

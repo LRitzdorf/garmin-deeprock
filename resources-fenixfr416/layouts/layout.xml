@@ -10,7 +10,7 @@
 
     <bitmap id="DeepRockLogo"
         filename="../../resources/drawables/drg_logo.png"
-        x="300" y="140"
+        x="325" y="140"
         scaleX="20%"
     />
 
