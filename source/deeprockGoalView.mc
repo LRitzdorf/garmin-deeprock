@@ -28,23 +28,41 @@ class deeprockGoalView extends WatchUi.View {
         // Load splash image
         splashImg = WatchUi.loadResource(Rez.Drawables.Pickaxe);
 
-        // Load relevant goal text
-        var goalName;
+        // Load relevant goal text and check if goal has been met multiple times
+        var goalName, goalMult;
+        var activity = ActivityMonitor.getInfo();
         switch (goalType) {
             default:
             case Application.GOAL_TYPE_STEPS:
                 goalName = Rez.Strings.GoalTypeSteps;
+                goalMult = activity.steps / activity.stepGoal;
                 break;
             case Application.GOAL_TYPE_FLOORS_CLIMBED:
                 goalName = Rez.Strings.GoalTypeFloors;
+                if (activity has :floorsClimbed) {
+                    goalMult = activity.floorsClimbed / activity.floorsClimbedGoal;
+                } else {
+                    // Unsupported on this device
+                    goalMult = 0;
+                }
                 break;
             case Application.GOAL_TYPE_ACTIVE_MINUTES:
                 goalName = Rez.Strings.GoalTypeActivity;
+                if (activity has :activeMinutesWeek) {
+                    goalMult = activity.activeMinutesWeek.total / activity.activeMinutesWeekGoal;
+                } else {
+                    // Unsupported on this device
+                    goalMult = 0;
+                }
                 break;
         }
 
         // Set the goal message
-        messageBox.setText(WatchUi.loadResource(goalName));
+        var goalMultText = "";
+        if (goalMult > 1) {
+            goalMultText = Lang.format(WatchUi.loadResource(Rez.Strings.GoalMultFormat), [goalMult]);
+        }
+        messageBox.setText(Lang.format(WatchUi.loadResource(goalName), [goalMultText]));
     }
 
     // Update the view

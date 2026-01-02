@@ -16,8 +16,11 @@
     <string id="DwarfClassGunner">Gunner</string>
     <string id="DwarfClassScout">Scout</string>
 
-    <string id="GoalTypeSteps">Step goal\nreached!</string>
-    <string id="GoalTypeFloors">Floor goal\nreached!</string>
-    <string id="GoalTypeActivity">Active minutes\ngoal reached!</string>
+    <!-- The goal multiplier text, e.g. " x2", ignored if the multiplier is 1 -->
+    <string id="GoalMultFormat"> x$1$</string>
+    <!-- NOTE: Goal strings must include a "$1$" format specifier for the goal multiplier text! -->
+    <string id="GoalTypeSteps">Step goal\nreached$1$!</string>
+    <string id="GoalTypeFloors">Floor goal\nreached$1$!</string>
+    <string id="GoalTypeActivity">Active minutes\ngoal reached$1$!</string>
 
 </strings>
